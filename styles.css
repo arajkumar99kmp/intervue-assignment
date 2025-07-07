@@ -10,43 +10,60 @@ body {
     color: #333;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: white;
-}
-
 .logo {
     display: inline-block; 
 }
 
 .logo img {
+  padding-left: 10px;
+  margin-top: 2rem;
     height: 40px; 
     width: auto; 
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    background: white;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
 .nav {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
-    margin-left: 500px;
 }
 
 .nav a {
     text-decoration: none;
     color: #6b7280;
     font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
-.nav a .become-interviewer {
-    color: #000000; 
-}
+
 .auth-buttons {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
+
+.nav a .become-interviewer {
+    color: #000000; 
+}
+
 
 .btn-login {
     color: #6b7280;
@@ -70,6 +87,7 @@ body {
     text-decoration: none;
     font-weight: 500;
 }
+
 
 .hero {
     text-align: center;
@@ -140,6 +158,63 @@ body {
 
 .resource-card:hover {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    /* Show only medium cards */
+    .resource-card .difficulty-badge.medium {
+        display: inline-block;
+    }
+    
+    /* Adjust grid to show only one card per row in mobile */
+    .grid-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Hide all cards except medium ones */
+    .resource-card {
+        display: none;
+    }
+    
+    .resource-card .card-header > span:last-child {
+        display: none;
+    }
+    
+    /* Show only medium cards */
+    .resource-card .difficulty-badge.medium + span {
+        display: inline;
+    }
+    
+    /* Alternative approach - show every 2nd card (assuming medium cards are in the middle) */
+    .grid-row {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .grid-row > * {
+        scroll-snap-align: start;
+        flex: 0 0 80%;
+    }
+    
+    /* Show all cards for swipe functionality */
+    .resource-card {
+        display: block;
+    }
+    
+    /* Visual indicator for current (medium) card */
+    .resource-card .difficulty-badge.medium {
+        background: #ea580c;
+        color: white;
+    }
+    
+    .resource-card:not(:has(.difficulty-badge.medium)) {
+        opacity: 0.7;
+    }
 }
 
 .card-header {
@@ -402,7 +477,7 @@ padding-right: 40px;
   .image-container {
     width: 100%;
     height: 250px;
-    border-radius: 20px 20px 0 0;
+    border-radius: 0 200px 200px 0;
   }
   
   .content {
@@ -1050,3 +1125,42 @@ padding-right: 40px;
     }
 }
 
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block; /* Show toggle button on mobile */
+    }
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav.active {
+        right: 0;
+    }
+    
+    .auth-buttons {
+        margin-top: 1rem;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-login,
+    .btn-signup {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+    }
+}

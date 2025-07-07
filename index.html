@@ -14,9 +14,18 @@
 <body>
     <header class="header">
         <div class="logo"><img src="images/im1.png" alt="logo"></div>
+
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"></path>
+            </svg>
+        </button>
+
         <nav class="nav">
             <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -1100 960 960" width="20px"
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
                     fill="#6b7280">
                     <path
                         d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z" />
@@ -26,11 +35,12 @@
             <a href="#">features</a>
             <a href="#">Pricing</a>
             <a href="#">Start a trial</a>
+
+            <div class="auth-buttons">
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-signup">Signup</a>
+            </div>
         </nav>
-        <div class="auth-buttons">
-            <a href="#" class="btn-login">Login</a>
-            <a href="#" class="btn-signup">Signup</a>
-        </div>
     </header>
 
     <section class="hero">
@@ -315,7 +325,7 @@
                                 </div>
                                 <div class="profiles">
                                     <div class="candidate-profile">
-                                        <img src="https://csspicker.dev/api/image/?q=professional+person&image_type=photo"
+                                        <img src="images/im4 (1).jpeg"
                                             alt="Rohan" class="profile-img">
                                         <div class="profile-info">
                                             <div class="name">Rohan</div>
@@ -324,11 +334,11 @@
                                     </div>
                                     <div class="interviewers">
                                         <div class="interviewer-avatars">
-                                            <img src="https://csspicker.dev/api/image/?q=business+person&image_type=photo"
+                                            <img src="images/im4 (2).jpeg"
                                                 alt="Interviewer 1" class="avatar">
-                                            <img src="https://csspicker.dev/api/image/?q=professional+man&image_type=photo"
+                                            <img src="images/im4 (3).jpeg"
                                                 alt="Interviewer 2" class="avatar">
-                                            <img src="https://csspicker.dev/api/image/?q=business+woman&image_type=photo"
+                                            <img src="images/im4 (4).jpeg"
                                                 alt="Interviewer 3" class="avatar">
                                         </div>
                                         <div class="interviewer-count">250+ Interviewers</div>
@@ -388,7 +398,7 @@
                                 <div class="report-header">
                                     <h4>Aditya's report for Data structure</h4>
                                     <div class="candidate-info">
-                                        <img src="https://csspicker.dev/api/image/?q=indian+professional&image_type=photo"
+                                        <img src="images/im4 (1).jpeg"
                                             alt="Aditya" class="candidate-avatar">
                                         <span class="candidate-name">Aditya kumar</span>
                                         <button class="playback-btn">Playback</button>
